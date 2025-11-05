@@ -16,6 +16,10 @@ void add_gradient (BMP &bmp, color a, color b){
 }
 
 int main () {
-    
+    BMP bmp (1000,500);
+    color a (50,50,50);
+    color b (0, 0, 255);
+
+    add_gradient (bmp, a, b);
 
 
