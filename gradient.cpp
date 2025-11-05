@@ -1,30 +1,21 @@
 #include "bmp.hpp"
 #include <iostream>
 #include <time.h>
-void draw_rectangle(BMP &bmp,int x, int y, int l, int h, int b, color c ){
-    for(int i=0;i<=l;i++){
-        for(int ii=0;ii<=b;ii++){
-            //top line
-            bmp.set_pixel(i+x, y+ii, c.r,c.g,c.b);
 
-            //botom line
-            bmp.set_pixel(i+x, y+h-ii, c.r, c.g,c.b);
-        }
-    }
-    for(int j=0;j<=h;j++){
-        for(int ii=0;ii<=b;ii++){
-            //left line
-            bmp.set_pixel(x+ii, y+j, c.r,c.g,c.b);
+void add_gradient (BMP &bmp, color a, color b){
+    int width = bmp.get_width();
+    int height = bmp.get_height();
 
-            //right line
-            bmp.set_pixel(x+l-ii, y+j,c.r, c.g,c.b);
+    float gradient = height / 100; 
+
+    for (int i = 0; i <= height, i++) {
+        for (int j = 0; j <= width, j++) {
+            bmp.set_pixel(j, i, ((a.r * (100 - (gradient * i)))+(b.r * (gradient * i))),((a.g * (100 - (gradient * i)))+(b.g * (gradient * i))),((a.b * (100 - (gradient * i)))+(b.b * (gradient * i))));
         }
     }
 }
 
-void add_gradient (BMP &bmp, int x, int y, color a, color b){
-  bmp width = x;
-  bmp length = y;
-
+int main () {
+    
 
 
