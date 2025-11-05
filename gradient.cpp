@@ -22,4 +22,6 @@ int main () {
 
     add_gradient (bmp, a, b);
 
+    bmp.write("gradient.bmp"); // Save the image to a file
 
+    return 0;
