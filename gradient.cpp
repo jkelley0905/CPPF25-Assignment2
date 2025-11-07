@@ -6,7 +6,7 @@ void add_gradient (BMP &bmp, color a, color b){
     int width = bmp.get_width();
     int height = bmp.get_height();
 
-    float gradient = (float) 100 / height; 
+    float gradient = (float) 1 / height; 
 
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
